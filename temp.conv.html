@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celcius-farehnite converter</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .heading h1{
+            text-align: center;
+            padding-bottom: 60px;
+            color: #fff;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background: #0f2027;
+            background-image: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            background-image: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            padding: 50px;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        label{
+            display: block;
+            color: #fff;
+        }
+        .temp{
+            width: 50%;
+            padding: 50px;
+            background: #0f2027;
+            background-image: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            background-image: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            box-shadow: 3px 3px 25px 5px #1e1e4e;
+        }
+
+        .input-div{
+            display: inline-block;
+        }
+        .inp{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+        label{
+            font-size: 22px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h1>Temperature Converter</h1>
+        </div>
+
+        <div class="temp">
+
+            <div class="input-div">
+                <label for="">Celsius</label>
+                <input type="number" value="0" id="cel" class="inp">
+            </div>
+
+            <div class="input-div">
+                <label for="">Farehnite</label>
+                <input type="number" value="32" id="fah" class="inp">
+            </div>
+
+        </div>
+    </div>
+
+
+
+<!--Javascript-->
+
+    <script>
+        
+        let cel = document.getElementById("cel");
+        let fah = document.getElementById("fah");
+
+        cel.addEventListener('input', function(){
+
+            let c = this.value;
+            let f = (c * 9/5) + 32;
+             fah.value = f;
+
+        });
+
+        fah.addEventListener('input',function(){
+
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+             cel.value = c;
+        });
+    </script>
+</body>
+</html>
